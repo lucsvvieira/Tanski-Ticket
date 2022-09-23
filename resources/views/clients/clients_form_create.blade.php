@@ -79,7 +79,7 @@
     <hr>
 
     <div>
-        <a href={{ route('clients.index') }} class="btn btn-primary btn-sm"><< Voltar</a>
+        <a href={{ route('clients.index') }} class="btn btn-primary btn-sm">&larr; Voltar</a>
     </div>
 
 @endsection
