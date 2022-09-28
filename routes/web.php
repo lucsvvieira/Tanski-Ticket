@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::resource('/clients', ClientController::class);
 // GET|HEAD        clients/{client}/edit ......................................... clients.edit › ClientController@edit
 // GET|HEAD        sanctum/csrf-cookie .............. sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
 // GET|HEAD        test .......................................................................... TestController@index
+
+Route::resource('/users', UserController::class);
