@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\PriorityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
@@ -35,3 +36,5 @@ Route::resource('/clients', ClientController::class);
 // GET|HEAD        test .......................................................................... TestController@index
 
 Route::resource('/users', UserController::class);
+
+Route::resource('/priorities', PriorityController::class);

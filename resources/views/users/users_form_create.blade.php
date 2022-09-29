@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <form action="{{ route('users.store') }}" method="POST">
+    <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="col-sm-7">
@@ -22,7 +22,7 @@
                     Nome Completo
                 </label>
                 <div class="col-sm-7">
-                    <input type="text" name="name" class="form-control mb-3">
+                    <input type="text" name="name" class="form-control mb-3" value="{{ old('name') }}">
                 </div>
             </div>
             <div class="form-group row">
@@ -30,15 +30,15 @@
                     Digite sua senha
                 </label>
                 <div class="col-sm-7">
-                    <input type="text" name="password" class="form-control mb-3">
+                    <input type="password" name="password" class="form-control mb-3">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="description" class="col-sm-5 col-form-label">
-                    Redigite sua senha
+                    Digite novamente sua senha
                 </label>
                 <div class="col-sm-7">
-                    <input type="text" name="password" class="form-control mb-3">
+                    <input type="password" name="password_confirmation" class="form-control mb-3">
                 </div>
             </div>
             <div class="form-group row">
@@ -46,7 +46,29 @@
                     E-mail
                 </label>
                 <div class="col-sm-7">
-                    <input type="text" name="email" class="form-control mb-3">
+                    <input type="text" name="email" class="form-control mb-3" value="{{ old('email') }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="image" class="col-sm-5 col-form-label">
+                    Avatar
+                </label>
+                <div class="col-sm-7">
+                    <input type="file" name="avatar" class="form-control-file mb-3">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="description" class="col-sm-5 col-form-label">
+                    Cliente
+                </label>
+                <div class="col-sm-7">
+                    <select class="form-control" name="client_id">
+                        @foreach ($clients as $client)
+                            <option value="{{$client->id}}" {{ old('client_id') == $client->id ? 'selected' : '' }}>
+                                {{$client->name}}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="row">
