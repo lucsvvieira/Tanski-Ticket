@@ -1,6 +1,9 @@
 @extends('layouts.template')
 
 @section('content')
+
+    <hr>
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -11,28 +14,35 @@
         </div>
     @endif
 
-    <form class="mt-4" action="{{ route('priorities.store') }}" method="POST">
+
+    <form action="{{ route('priorities.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-            <div class="text-center">
-                <label for="priority" class="col-form-label">
-                    Prioridade
+
+        <h1 class="text-center p-5">Criando Prioridades</h1>
+
+        <div class="d-flex justify-content-center">
+            <div class="col-sm-7">
+                <label for="description" class="col-sm-5 col-form-label">
+                    Nome da Prioridade
                 </label>
-                <div class="col">
-                    <select id="priority">
-                        <option value="low">Baixa</option>
-                        <option value="medium">Média</option>
-                        <option value="high">Alta</option>
-                      </select>
+                <div class="col-sm-7">
+                    <input type="text" name="name" class="form-control mb-3" value="{{ old('name') }}">
                 </div>
-            </div>
-            <div class="row">
-                <div class="d-flex justify-content-center mt-5">
-                    <button type="submit" value="submit" class="btn btn-success btn-md">
-                        Salvar
-                    </button>
+                <label for="description" class="col-sm-5 col-form-label">
+                    Contagem da Prioridade
+                </label>
+                <div class="col-sm-7">
+                    <input type="text" name="priority_count" class="form-control mb-3" value="{{ old('priority_count') }}">
                 </div>
             </div>
         </div>
+
+        <div class="mt-4 col-sm-7 d-flex justify-content-center">
+            <button type="submit" value="submit" class="btn btn-success btn-md">
+                Cadastrar Prioridade
+            </button>
+        </div>
+
     </form>
 
     <hr>
@@ -40,5 +50,4 @@
     <div class="d-flex justify-content-center">
         <a href={{ route('priorities.index') }} class="btn btn-primary btn-sm">&larr; Voltar</a>
     </div>
-
 @endsection

@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('users.store') }}" method="POST">
         @csrf
 
         <div class="col-sm-7">
@@ -47,6 +47,14 @@
                 </label>
                 <div class="col-sm-7">
                     <input type="text" name="email" class="form-control mb-3" value="{{ old('email') }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="description" class="col-sm-5 col-form-label">
+                    Telefone
+                </label>
+                <div class="col-sm-7">
+                    <input type="text" name="phone" class="form-control mb-3" value="{{ old('phone') }}">
                 </div>
             </div>
             <div class="form-group row">

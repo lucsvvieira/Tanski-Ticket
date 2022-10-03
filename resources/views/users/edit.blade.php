@@ -37,11 +37,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="description" class="col-sm-5 col-form-label">
+                    <label for="image" class="col-sm-5 col-form-label">
                         Avatar
                     </label>
                     <div class="col-sm-7">
-                        <input type="text" name="avatar" class="form-control mb-3" value="{{ $user->avatar }}">
+                        <input type="file" name="avatar" class="form-control mb-3" value="{{ $user->avatar }}">
+                        <img class="rounded-circle p-2" src="{{ $user->foto }}" alt="Foto" width="80px" height="80px">
                     </div>
                 </div>
                 <div class="form-group row">

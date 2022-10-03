@@ -57,7 +57,7 @@ class UserController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|min:6|confirmed',
-            'avatar' => 'required|file',
+            'avatar' => 'file',
             'client_id' => 'required'
         ]);
 

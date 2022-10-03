@@ -15,7 +15,8 @@ class PriorityController extends Controller
      */
     public function index()
     {
-        return view('priorities.index');
+        $priorities = Priority::paginate(50);
+        return view('priorities.index', ['priorities' => $priorities]);
     }
 
     /**
@@ -25,7 +26,10 @@ class PriorityController extends Controller
      */
     public function create()
     {
-        return view('priorities.priorities_create');
+
+        $priorities = Priority::all();
+        
+        return view('priorities.priorities_create', ['priorities' => $priorities]);
     }
 
     /**
@@ -61,7 +65,9 @@ class PriorityController extends Controller
      */
     public function show($id)
     {
-        //
+        $priority = Priority::find($id);
+
+        return view('priorities.show', ['priority' => $priority]);
     }
 
     /**
@@ -72,7 +78,9 @@ class PriorityController extends Controller
      */
     public function edit($id)
     {
-        //
+        $priority = Priority::findOrFail($id);
+
+        return view('priorities.edit', ['priority' => $priority]);
     }
 
     /**
@@ -84,7 +92,9 @@ class PriorityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $priority = Priority::findOrFail($id)->update($request->all());
+
+        return redirect()->route('priorities.index');
     }
 
     /**
@@ -95,6 +105,8 @@ class PriorityController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Priority::findOrFail($id)->delete();
+
+        return redirect()->route('priorities.index');
     }
 }

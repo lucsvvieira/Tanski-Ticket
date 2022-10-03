@@ -17,7 +17,7 @@
                 <tr class="text-center table-primary">
                     <th>{{ $user->name }}</th>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->avatar }}</td>
+                    <td><img class="rounded-circle" src="{{ $user->foto }}" alt="Foto" width="50px" height="50px"></td>
                     <td>{{ $user->phone }}</td>
                 </tr>
             </tbody>
