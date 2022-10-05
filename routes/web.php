@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\OccurrencyStatusController;
@@ -43,3 +44,5 @@ Route::resource('/priorities', PriorityController::class);
 Route::resource('/occurrency_status', OccurrencyStatusController::class);
 Route::resource('/sla', SlaController::class);
 Route::resource('/departments', DepartmentsController::class);
+Route::resource('/departments', DepartmentsController::class);
+Route::resource('/categories', CategoriesController::class);
