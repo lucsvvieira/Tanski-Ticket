@@ -3,6 +3,8 @@
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DepartmentsController;
+use App\Http\Controllers\OccurrencyAttachment;
+use App\Http\Controllers\OccurrencyAttachmentController;
 use App\Http\Controllers\OccurrencyStatusController;
 use App\Http\Controllers\PriorityController;
 use App\Http\Controllers\SlaController;
@@ -46,3 +48,4 @@ Route::resource('/sla', SlaController::class);
 Route::resource('/departments', DepartmentsController::class);
 Route::resource('/departments', DepartmentsController::class);
 Route::resource('/categories', CategoriesController::class);
+Route::resource('/occurrency_attachments', OccurrencyAttachmentController::class);
