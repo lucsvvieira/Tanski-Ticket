@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\OccurrencyStatusController;
 use App\Http\Controllers\PriorityController;
+use App\Http\Controllers\SlaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
@@ -39,3 +40,4 @@ Route::resource('/clients', ClientController::class);
 Route::resource('/users', UserController::class);
 Route::resource('/priorities', PriorityController::class);
 Route::resource('/occurrency_status', OccurrencyStatusController::class);
+Route::resource('/sla', SlaController::class);
