@@ -77,7 +77,9 @@ class OccurrencyAttachmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $occurrency_attachment = OccurrencyAttachment::findOrFail($id);
+
+        return view('occurrency_attachments.edit', ['occurrency_attachments' => $occurrency_attachment]);
     }
 
     /**
@@ -89,7 +91,9 @@ class OccurrencyAttachmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $occurrency_attachment = OccurrencyAttachment::findOrFail($id)->update($request->all());
+
+        return redirect()->route('occurrency_attachments.index');
     }
 
     /**
