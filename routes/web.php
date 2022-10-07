@@ -12,6 +12,7 @@ use App\Http\Controllers\SlaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +52,4 @@ Route::resource('/departments', DepartmentsController::class);
 Route::resource('/categories', CategoriesController::class);
 Route::resource('/occurrency_attachments', OccurrencyAttachmentController::class);
 Route::resource('/occurrency_records', OccurrencyRecordsController::class);
+Route::resource('/user_types', UserTypeController::class);
