@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('occurrency_records', function (Blueprint $table) {
             $table->id();
             $table->text('messages');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -27,6 +30,9 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropForeign('user_id');
+        });
         Schema::dropIfExists('occurrency_records');
     }
 };

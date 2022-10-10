@@ -60,18 +60,18 @@ class UserController extends Controller
             'avatar' => 'file',
             'client_id' => 'required'
         ]);
-
-        if ($request->has('avatar')) {
-            $path = $request['avatar']->store('avatars', 'public'); //avatars/NOME.jpg
-
-            $data['avatar'] = $path; 
-        }   
     
         if ($validator->fails()) {
             return back()
                 ->withErrors($validator)
                 ->withInput();
         }
+
+        if ($request->has('avatar')) {
+            $path = $request['avatar']->store('avatar', 'public'); //avatars/NOME.jpg
+
+            $data['avatar'] = $path; 
+        }   
 
         $password = Hash::make($request->get('password'));
 

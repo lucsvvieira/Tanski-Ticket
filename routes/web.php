@@ -48,7 +48,6 @@ Route::resource('/priorities', PriorityController::class);
 Route::resource('/occurrency_status', OccurrencyStatusController::class);
 Route::resource('/sla', SlaController::class);
 Route::resource('/departments', DepartmentsController::class);
-Route::resource('/departments', DepartmentsController::class);
 Route::resource('/categories', CategoriesController::class);
 Route::resource('/occurrency_attachments', OccurrencyAttachmentController::class);
 Route::resource('/occurrency_records', OccurrencyRecordsController::class);

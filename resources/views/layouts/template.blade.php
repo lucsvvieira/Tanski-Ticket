@@ -4899,7 +4899,7 @@ License: For each use you must have a valid license purchased only from above li
 												</span>
 												<!--end::Svg Icon-->
 											</span>
-											<span class="menu-title">Dashboards</span>
+											<span class="menu-title">Menus</span>
 											<span class="menu-arrow"></span>
 										</span>
 										<!--end:Menu link-->
@@ -4908,11 +4908,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin:Menu item-->
 											<div class="menu-item">
 												<!--begin:Menu link-->
-												<a class="menu-link active" href="../../demo1/dist/index.html">
+												<a class="menu-link {{ (request()->is('users')) ? 'active' : '' }}" href="{{route('users.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">Default</span>
+													<span class="menu-title">Usuários</span>
 												</a>
 												<!--end:Menu link-->
 											</div>
@@ -4920,11 +4920,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin:Menu item-->
 											<div class="menu-item">
 												<!--begin:Menu link-->
-												<a class="menu-link" href="../../demo1/dist/dashboards/ecommerce.html">
+												<a class="menu-link {{ (request()->is('clients')) ? 'active' : '' }}" href="{{route('clients.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">eCommerce</span>
+													<span class="menu-title">Clientes</span>
 												</a>
 												<!--end:Menu link-->
 											</div>
@@ -4932,11 +4932,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin:Menu item-->
 											<div class="menu-item">
 												<!--begin:Menu link-->
-												<a class="menu-link" href="../../demo1/dist/dashboards/projects.html">
+												<a class="menu-link {{ (request()->is('priorities')) ? 'active' : '' }}" href="{{route('priorities.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">Projects</span>
+													<span class="menu-title">Prioridades</span>
 												</a>
 												<!--end:Menu link-->
 											</div>
@@ -4944,11 +4944,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin:Menu item-->
 											<div class="menu-item">
 												<!--begin:Menu link-->
-												<a class="menu-link" href="../../demo1/dist/dashboards/online-courses.html">
+												<a class="menu-link {{ (request()->is('occurrency_status')) ? 'active' : '' }}" href="{{route('occurrency_status.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">Online Courses</span>
+													<span class="menu-title">Status de Ocorrências</span>
 												</a>
 												<!--end:Menu link-->
 											</div>
@@ -4956,11 +4956,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin:Menu item-->
 											<div class="menu-item">
 												<!--begin:Menu link-->
-												<a class="menu-link" href="../../demo1/dist/dashboards/marketing.html">
+												<a class="menu-link {{ (request()->is('sla')) ? 'active' : '' }}" href="{{route('sla.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">Marketing</span>
+													<span class="menu-title">Sla</span>
 												</a>
 												<!--end:Menu link-->
 											</div>
@@ -4969,11 +4969,11 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin:Menu item-->
 												<div class="menu-item">
 													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/bidding.html">
+													<a class="menu-link {{ (request()->is('departments')) ? 'active' : '' }}" href="{{route('departments.index')}}">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
-														<span class="menu-title">Bidding</span>
+														<span class="menu-title">Departamentos</span>
 													</a>
 													<!--end:Menu link-->
 												</div>
@@ -4981,11 +4981,11 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin:Menu item-->
 												<div class="menu-item">
 													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/pos.html">
+													<a class="menu-link {{ (request()->is('categories')) ? 'active' : '' }}" href="{{route('categories.index')}}">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
-														<span class="menu-title">POS System</span>
+														<span class="menu-title">Categorias</span>
 													</a>
 													<!--end:Menu link-->
 												</div>
@@ -4993,11 +4993,11 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin:Menu item-->
 												<div class="menu-item">
 													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/call-center.html">
+													<a class="menu-link {{ (request()->is('occurrency_attachments')) ? 'active' : '' }}" href="{{route('occurrency_attachments.index')}}">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
-														<span class="menu-title">Call Center</span>
+														<span class="menu-title">Anexos de Ocorrências</span>
 													</a>
 													<!--end:Menu link-->
 												</div>
@@ -5005,11 +5005,11 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin:Menu item-->
 												<div class="menu-item">
 													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/logistics.html">
+													<a class="menu-link {{ (request()->is('occurrency_records')) ? 'active' : '' }}" href="{{route('occurrency_records.index')}}">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
-														<span class="menu-title">Logistics</span>
+														<span class="menu-title">Registros de Ocorrências</span>
 													</a>
 													<!--end:Menu link-->
 												</div>
@@ -5017,107 +5017,11 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin:Menu item-->
 												<div class="menu-item">
 													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/website-analytics.html">
+													<a class="menu-link {{ (request()->is('user_types')) ? 'active' : '' }}" href="{{route('user_types.index')}}">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
-														<span class="menu-title">Website Analytics</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-												<!--end:Menu item-->
-												<!--begin:Menu item-->
-												<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/finance-performance.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Finance Performance</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-												<!--end:Menu item-->
-												<!--begin:Menu item-->
-												<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/store-analytics.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Store Analytics</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-												<!--end:Menu item-->
-												<!--begin:Menu item-->
-												<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/social.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Social</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-												<!--end:Menu item-->
-												<!--begin:Menu item-->
-												<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/delivery.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Delivery</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-												<!--end:Menu item-->
-												<!--begin:Menu item-->
-												<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/crypto.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Crypto</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-												<!--end:Menu item-->
-												<!--begin:Menu item-->
-												<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/school.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">School</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-												<!--end:Menu item-->
-												<!--begin:Menu item-->
-												<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/dashboards/podcast.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Podcast</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-												<!--end:Menu item-->
-												<!--begin:Menu item-->
-												<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="../../demo1/dist/landing.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Landing</span>
+														<span class="menu-title">Tipos De Usuários</span>
 													</a>
 													<!--end:Menu link-->
 												</div>
@@ -5125,8 +5029,8 @@ License: For each use you must have a valid license purchased only from above li
 											</div>
 											<div class="menu-item">
 												<div class="menu-content">
-													<a class="btn btn-flex btn-color-primary d-flex flex-stack fs-base p-0 ms-2 mb-2 toggle collapsible collapsed" data-bs-toggle="collapse" href="#kt_app_sidebar_menu_dashboards_collapse" data-kt-toggle-text="Show Less">
-														<span data-kt-toggle-text-target="true">Show 12 More</span>
+													<a class="btn btn-flex btn-color-primary d-flex flex-stack fs-base p-0 ms-2 mb-2 toggle collapsible collapsed" data-bs-toggle="collapse" href="#kt_app_sidebar_menu_dashboards_collapse" data-kt-toggle-text="Mostrar Menos">
+														<span data-kt-toggle-text-target="true">Mostrar Mais</span>
 														<!--begin::Svg Icon | path: icons/duotune/general/gen036.svg-->
 														<span class="svg-icon toggle-on svg-icon-2 me-0">
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

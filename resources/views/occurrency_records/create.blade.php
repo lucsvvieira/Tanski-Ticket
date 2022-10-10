@@ -25,6 +25,20 @@
                 </label>
                     <input type="text" name="messages" class="form-control mb-3" value="{{ old('messages') }}">
             </div>
+            <div class="form-group row">
+                <label for="description" class="col-sm-5 col-form-label">
+                    Usuário
+                </label>
+                <div class="col-sm-7">
+                    <select class="form-control" name="user_id">
+                        @foreach ($users as $user)
+                            <option value="{{$user->id}}" {{ old('user_id') == $user->id ? 'selected' : '' }}>
+                                {{$user->name}}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
             <div class="mt-4 col-sm-12 d-flex justify-content-center">
                 <button type="submit" value="submit" class="btn btn-success btn-md">
                     Cadastrar Registro de Ocorrência

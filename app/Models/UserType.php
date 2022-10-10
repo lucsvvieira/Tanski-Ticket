@@ -12,6 +12,7 @@ class UserType extends Model
     protected $table = 'user_type';
 
     protected $fillable = [
-        'type_name'
+        'type_name',
+        'user_id'
     ];
 }

@@ -10,6 +10,13 @@ class OccurrencyRecord extends Model
     use HasFactory;
     
     protected $fillable = [
-        'messages'
+        'messages',
+        'user_id'
     ];
+
+    public function user() {
+
+        return $this->belongsTo(User::class);
+
+    }
 }
