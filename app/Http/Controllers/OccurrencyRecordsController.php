@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OccurrencyRecord;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -26,9 +27,9 @@ class OccurrencyRecordsController extends Controller
      */
     public function create()
     {
-        $occurrency_records = OccurrencyRecord::all();
+        $users = User::all();
         
-        return view('occurrency_records.create', ['occurrency_records' => $occurrency_records]);
+        return view('occurrency_records.create', ['users' => $users]);
     }
 
     /**

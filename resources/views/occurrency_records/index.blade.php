@@ -10,6 +10,7 @@
     <thead class="table-dark">
         <tr class="text-center">
             <th>Mensagens</th>
+            <th>Usuário</th>
             <th colspan="3">Ações</th>
         </tr>
     </thead>
@@ -17,6 +18,7 @@
         @foreach ($occurrency_records as $occurrency_record)
             <tr class="text-center">
                 <th>{{ $occurrency_record->messages }}</th>
+                <th>{{ $occurrency_record->user->name }}</th>
                 <td><a href={{ route('occurrency_records.edit', $occurrency_record->id) }} class="btn btn-success btn-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pencil-square" viewBox="0 0 16 16">
