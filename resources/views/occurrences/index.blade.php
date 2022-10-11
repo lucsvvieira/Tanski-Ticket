@@ -13,7 +13,7 @@
             <th>Data de Abertura</th>
             <th>Data de Fechamento</th>
             <th>Dia Atendido</th>
-            <th>Aperto por:</th>
+            <th>Aberto por:</th>
             <th>Atendido por:</th>
             <th>Prioridade</th>
             <th>Anexos</th>
@@ -30,7 +30,9 @@
                 <th>{{ $o->opened_by }}</th>
                 <th>{{ $o->attended_by }}</th>
                 <th>{{ $o->priority }}</th>
-                <th>{{ $o->attach_photos }}</th>
+                <td>    
+                    <img class="rounded-circle" src="{{ $o->attach_photos }}" alt="Foto" width="50px" height="50px">
+                </td>
                 <td><a href={{ route('occurrences.edit', $o->id) }} class="btn btn-success btn-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pencil-square" viewBox="0 0 16 16">
