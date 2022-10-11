@@ -5026,6 +5026,16 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end:Menu link-->
 												</div>
 												<!--end:Menu item-->
+												<div class="menu-item">
+													<!--begin:Menu link-->
+													<a class="menu-link {{ (request()->is('occurrences')) ? 'active' : '' }}" href="{{route('occurrences.index')}}">
+														<span class="menu-bullet">
+															<span class="bullet bullet-dot"></span>
+														</span>
+														<span class="menu-title">Ocorrências</span>
+													</a>
+													<!--end:Menu link-->
+												</div>
 											</div>
 											<div class="menu-item">
 												<div class="menu-content">
