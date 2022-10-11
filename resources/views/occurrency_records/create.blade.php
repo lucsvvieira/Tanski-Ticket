@@ -18,18 +18,18 @@
     <form action="{{ route('occurrency_records.store') }}" method="POST">
         @csrf
         <div>
-            <h1 class="text-center p-5">Criando Anexos de Ocorrências</h1>
+            <h1 class="text-center p-5">Criando Registro de Ocorrência</h1>
             <div class="d-flex flex-column text-center">
                 <label for="description" class="p-2">
                     Mensagem
                 </label>
                     <input type="text" name="messages" class="form-control mb-3" value="{{ old('messages') }}">
             </div>
-            <div class="form-group row">
+            <div class="form-group">
                 <label for="description" class="col-sm-5 col-form-label">
                     Usuário
                 </label>
-                <div class="col-sm-7">
+                <div class="col-sm">
                     <select class="form-control" name="user_id">
                         @foreach ($users as $user)
                             <option value="{{$user->id}}" {{ old('user_id') == $user->id ? 'selected' : '' }}>
