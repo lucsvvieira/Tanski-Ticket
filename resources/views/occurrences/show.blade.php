@@ -26,7 +26,7 @@
                     <th>{{ $occurrency->opened_by }}</th>
                     <th>{{ $occurrency->attended_by }}</th>
                     <th>{{ $occurrency->priority }}</th>
-                    <th>{{ $occurrency->attach_photos }}</th>
+                    <th><img class="rounded-circle" src="{{ $occurrency->attach_photos }}" alt="Foto" width="50px" height="50px"></th>
                 </tr>
             </tbody>
         </table>

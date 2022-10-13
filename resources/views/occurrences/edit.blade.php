@@ -82,6 +82,7 @@
                     </label>
                     <div class="col-sm-7">
                         <input type="file" name="attach_photos" class="form-control mb-3" value="{{ $occurrency->attach_photos }}">
+                        <img class="rounded-circle p-2" src="{{ $occurrency->attach_photos }}" alt="Foto" width="100px" height="100px">
                     </div>
                 </div>
                 <div class="row">

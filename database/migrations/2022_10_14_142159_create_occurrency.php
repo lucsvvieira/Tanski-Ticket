@@ -23,6 +23,20 @@ return new class extends Migration
             $table->string('attended_by');
             $table->string('priority');
             $table->string('attach_photos');
+            $table->unsignedBigInteger('occurrency_record_id');
+            $table->foreign('occurrency_record_id')->references('id')->on('OccurrencyRecord');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('Category');
+            $table->unsignedBigInteger('department_id');
+            $table->foreign('department_id')->references('id')->on('Department');
+            $table->unsignedBigInteger('priorities_id');
+            $table->foreign('priorities_id')->references('id')->on('Priority');
+            $table->unsignedBigInteger('occurrency_status_id');
+            $table->foreign('occurrency_status_id')->references('id')->on('OccurrencyStatus');
+            $table->unsignedBigInteger('sla_id');
+            $table->foreign('sla_id')->references('id')->on('Sla');
+            $table->unsignedBigInteger('user_client_id');
+            $table->foreign('user_client_id')->references('id')->on('User');
             $table->timestamps();
         });
     }

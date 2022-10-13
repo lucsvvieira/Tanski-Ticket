@@ -31,7 +31,7 @@
                 <th>{{ $o->attended_by }}</th>
                 <th>{{ $o->priority }}</th>
                 <td>    
-                    <img class="rounded-circle" src="{{ $o->attach_photos }}" alt="Foto" width="50px" height="50px">
+                    <img class="rounded-circle" src="{{ $o->foto }}" alt="Foto" width="100px" height="100px">
                 </td>
                 <td><a href={{ route('occurrences.edit', $o->id) }} class="btn btn-success btn-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
