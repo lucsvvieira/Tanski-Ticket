@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('extension');
             $table->string('size');
             $table->string('file_name');
+            $table->unsignedBigInteger('occurrency_id');
+            $table->foreign('occurrency_id')->references('id')->on('occurrency');
             $table->timestamps();
         });
     }

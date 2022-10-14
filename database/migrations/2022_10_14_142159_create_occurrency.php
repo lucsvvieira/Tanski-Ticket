@@ -24,20 +24,22 @@ return new class extends Migration
             $table->string('priority');
             $table->string('attach_photos');
             $table->unsignedBigInteger('occurrency_record_id');
-            $table->foreign('occurrency_record_id')->references('id')->on('OccurrencyRecord');
+            $table->foreign('occurrency_record_id')->references('id')->on('occurrency_records');
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('Category');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->unsignedBigInteger('department_id');
-            $table->foreign('department_id')->references('id')->on('Department');
-            $table->unsignedBigInteger('priorities_id');
-            $table->foreign('priorities_id')->references('id')->on('Priority');
+            $table->foreign('department_id')->references('id')->on('departments');
+            $table->unsignedBigInteger('priority_id');
+            $table->foreign('priority_id')->references('id')->on('priorities');
             $table->unsignedBigInteger('occurrency_status_id');
-            $table->foreign('occurrency_status_id')->references('id')->on('OccurrencyStatus');
+            $table->foreign('occurrency_status_id')->references('id')->on('occurrency_status');
             $table->unsignedBigInteger('sla_id');
-            $table->foreign('sla_id')->references('id')->on('Sla');
-            $table->unsignedBigInteger('user_client_id');
-            $table->foreign('user_client_id')->references('id')->on('User');
-            $table->timestamps();
+            $table->foreign('sla_id')->references('id')->on('sla');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('client_id');
+            $table->foreign('client_id')->references('id')->on('clients');
+            $table->timestamps();   
         });
     }
 
@@ -48,6 +50,19 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('Occurrency', function (Blueprint $table) {
+            $table->dropForeign([
+                'user_id',
+                'occurrency_record_id',
+                'category_id',
+                'department_id',
+                'priorities_id',
+                'occurrency_status_id',
+                'sla_id',
+                'client_id'  
+            ]);
+        });
+
         Schema::dropIfExists('occurrency');
     }
 };

@@ -15,6 +15,7 @@ class OccurrencyAttachment extends Model
         'original_name',
         'extension',
         'size',
-        'file_name'
+        'file_name',
+        'occurrency_id'
     ];
 }
