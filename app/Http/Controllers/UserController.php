@@ -60,7 +60,7 @@ class UserController extends Controller
             'avatar' => 'file',
             'client_id' => 'required'
         ]);
-    
+
         if ($validator->fails()) {
             return back()
                 ->withErrors($validator)
@@ -70,8 +70,8 @@ class UserController extends Controller
         if ($request->has('avatar')) {
             $path = $request['avatar']->store('avatar', 'public'); //avatars/NOME.jpg
 
-            $data['avatar'] = $path; 
-        }   
+            $data['avatar'] = $path;
+        }
 
         $password = Hash::make($request->get('password'));
 
@@ -117,7 +117,18 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $client = User::findOrFail($id)->update($request->all());
+
+        $data = $request->all();
+
+        if ($request->has('avatar')) {
+            $path = $request['avatar']->store('avatar', 'public'); //avatars/NOME.jpg
+
+            $data['avatar'] = $path;
+        }
+
+        $user = User::findOrFail($id)->update($data);
+
+
 
         return redirect()->route('users.index');
     }

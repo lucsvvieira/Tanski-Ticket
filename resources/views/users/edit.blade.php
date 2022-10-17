@@ -16,7 +16,7 @@
     @endif
 
     <div class="container">
-        <form action="{{ route('users.update', $user->id) }}" method="POST">
+        <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="col-sm-7">

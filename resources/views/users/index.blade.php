@@ -51,7 +51,7 @@
                             </svg>
                         </a></td>
                     <td>
-                        <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                        <form action="{{ route('users.destroy', $user->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">
