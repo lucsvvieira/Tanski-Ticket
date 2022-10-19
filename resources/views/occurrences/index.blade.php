@@ -17,6 +17,10 @@
             <th>Atendido por:</th>
             <th>Prioridade</th>
             <th>Anexos</th>
+            <th>Categoria</th>
+            <th>Departamento</th>
+            <th>Status de Ocorrência</th>
+            <th>Sla</th>
             <th colspan="3">Ações</th>
         </tr>
     </thead>
@@ -27,12 +31,20 @@
                 <th>{{ $o->open_date }}</th>
                 <th>{{ $o->close_date }}</th>
                 <th>{{ $o->attendanting_day }}</th>
-                <th>{{ $o->opened_by }}</th>
-                <th>{{ $o->attended_by }}</th>
-                <th>{{ $o->priority }}</th>
+                <th>
+                @if ($o->user)
+                    {{ $o->user->name }}
+                @endif
+                </th>
+                <th>{{ $o->userClient->name }}</th>
+                <th>{{ $o->priority->name }}</th>
                 <td>    
                     <img class="rounded-circle" src="{{ $o->foto }}" alt="Foto" width="100px" height="100px">
                 </td>
+                <th>{{ $o->category->category_type }}</th>
+                <th>{{ $o->department->department_name }}</th>
+                <th>{{ $o->OccurrencyStatus->status }}</th>
+                <th>{{ $o->sla->quality_service }}</th>
                 <td><a href={{ route('occurrences.edit', $o->id) }} class="btn btn-success btn-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pencil-square" viewBox="0 0 16 16">

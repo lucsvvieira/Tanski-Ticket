@@ -18,6 +18,8 @@ return new class extends Migration
             $table->text('messages');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('occurrences_id');
+            $table->foreign('occurrences_id')->references('id')->on('occurrency');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -30,8 +32,11 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign('user_id');
+        Schema::table('occurrency_records', function (Blueprint $table) {
+            $table->dropForeign([
+                'user_id',
+                'occurrences_id'
+            ]);
         });
         
         Schema::dropIfExists('occurrency_records');

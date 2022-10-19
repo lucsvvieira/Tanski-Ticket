@@ -16,15 +16,9 @@ return new class extends Migration
         Schema::create('occurrency', function (Blueprint $table) {
             $table->id();
             $table->text('description');
-            $table->dateTime('open_date');
-            $table->dateTime('close_date');
-            $table->date('attendanting_day');
-            $table->string('opened_by');
-            $table->string('attended_by');
-            $table->string('priority');
-            $table->string('attach_photos');
-            $table->unsignedBigInteger('occurrency_record_id');
-            $table->foreign('occurrency_record_id')->references('id')->on('occurrency_records');
+            $table->date('open_date');
+            $table->date('close_date')->nullable();
+            $table->date('attendanting_day')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->unsignedBigInteger('department_id');
@@ -35,10 +29,10 @@ return new class extends Migration
             $table->foreign('occurrency_status_id')->references('id')->on('occurrency_status');
             $table->unsignedBigInteger('sla_id');
             $table->foreign('sla_id')->references('id')->on('sla');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->unsignedBigInteger('user_client_id');
+            $table->foreign('user_client_id')->references('id')->on('clients');
             $table->timestamps();   
         });
     }
@@ -53,13 +47,12 @@ return new class extends Migration
         Schema::table('Occurrency', function (Blueprint $table) {
             $table->dropForeign([
                 'user_id',
-                'occurrency_record_id',
+                'user_client_id',
                 'category_id',
                 'department_id',
-                'priorities_id',
+                'priority_id',
                 'occurrency_status_id',
-                'sla_id',
-                'client_id'  
+                'sla_id'
             ]);
         });
 

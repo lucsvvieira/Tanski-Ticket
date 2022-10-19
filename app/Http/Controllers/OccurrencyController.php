@@ -10,6 +10,7 @@ use App\Models\OccurrencyStatus;
 use App\Models\Priority;
 use App\Models\Sla;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -61,8 +62,13 @@ class OccurrencyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         $data = $request->all();
+        
+        // $data['open_date'] = Carbon::createFromFormat('m/d/Y', $request->open_date)->format('d-m-Y');
+        // $data['close_date'] = Carbon::createFromFormat('d/m/Y', $request->close_date)->format('Y-m-d');
+        // $data['attendanting_day'] = Carbon::createFromFormat('d/m/Y', $request->attendanting_day)->format('Y-m-d');
+
 
         $validator = Validator::make($request->all(), [
             'occurrency' => '',

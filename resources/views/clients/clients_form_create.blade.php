@@ -69,7 +69,7 @@
                 <div class="col-sm-5"></div>
                 <div class="col-sm-7 d-flex justify-content-center">
                     <button type="submit" value="submit" class="btn btn-success btn-md">
-                        Cadastrar Usuário
+                        Cadastrar Cliente
                     </button>
                 </div>
             </div>

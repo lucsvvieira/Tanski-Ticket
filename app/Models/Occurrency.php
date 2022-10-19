@@ -16,16 +16,12 @@ class Occurrency extends Model
         'open_date',
         'close_date',
         'attendanting_day',
-        'opened_by',
-        'attended_by',
-        'priority',
-        'attach_photos',
-        'occurrency_record_id',
         'category_id',
         'department_id',
-        'priorities_id',
+        'priority_id',
         'occurrency_status_id',
         'sla_id',
+        'user_id',
         'user_client_id'
     ];
 
@@ -34,27 +30,31 @@ class Occurrency extends Model
     }
 
     public function category() {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     public function department() {
-        return $this->belongsTo(Department::class);
+        return $this->belongsTo(Department::class, 'department_id');
     }
 
     public function priority() {
-        return $this->belongsTo(Priority::class);
+        return $this->belongsTo(Priority::class, 'priority_id');
     }
 
     public function OccurrencyStatus() {
-        return $this->belongsTo(OcurrencyStatus::class);
+        return $this->belongsTo(OccurrencyStatus::class, 'occurrency_status_id');
     }
 
     public function sla() {
-        return $this->belongsTo(Sla::class);
+        return $this->belongsTo(Sla::class, 'sla_id');
     }
 
     public function user() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function userClient() {
+        return $this->belongsTo(User::class, 'user_client_id');
     }
 
     public function getFotoAttribute()

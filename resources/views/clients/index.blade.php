@@ -76,7 +76,7 @@
     </table>
 
     <div class="d-flex justify-content-center mt-4">
-        <a href={{ route('clients.create') }} class="btn btn-success">Cadastrar Novo Usuário</a>
+        <a href={{ route('clients.create') }} class="btn btn-success">Cadastrar Novo Cliente</a>
     </div>
     
     {{ $clients->appends($_GET)->links() }}
