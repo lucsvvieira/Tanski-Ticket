@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DepartmentsController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OccurrencyAttachment;
 use App\Http\Controllers\OccurrencyAttachmentController;
 use App\Http\Controllers\OccurrencyController;
@@ -25,13 +26,8 @@ use App\Http\Controllers\UserTypeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/test', [TestController::class, 'index'] );
-
+Route::get('/', [LoginController::class, 'login'])->name('login.page');
+Route::post('/auth', [LoginController::class, 'auth'])->name('auth.login');
 Route::resource('/clients', ClientController::class);
 
 // GET|HEAD        clients ..................................................... clients.index › ClientController@index
@@ -44,13 +40,13 @@ Route::resource('/clients', ClientController::class);
 // GET|HEAD        sanctum/csrf-cookie .............. sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
 // GET|HEAD        test .......................................................................... TestController@index
 
-Route::resource('/users', UserController::class);
-Route::resource('/priorities', PriorityController::class);
-Route::resource('/occurrency_status', OccurrencyStatusController::class);
-Route::resource('/sla', SlaController::class);
-Route::resource('/departments', DepartmentsController::class);
-Route::resource('/categories', CategoriesController::class);
-Route::resource('/occurrency_attachments', OccurrencyAttachmentController::class);
-Route::resource('/occurrency_records', OccurrencyRecordsController::class);
-Route::resource('/user_types', UserTypeController::class);
-Route::resource('/occurrences', OccurrencyController::class);
+Route::resource('/users', UserController::class)->middleware('auth');
+Route::resource('/priorities', PriorityController::class)->middleware('auth');
+Route::resource('/occurrency_status', OccurrencyStatusController::class)->middleware('auth');
+Route::resource('/sla', SlaController::class)->middleware('auth');
+Route::resource('/departments', DepartmentsController::class)->middleware('auth');
+Route::resource('/categories', CategoriesController::class)->middleware('auth');
+Route::resource('/occurrency_attachments', OccurrencyAttachmentController::class)->middleware('auth');
+Route::resource('/occurrency_records', OccurrencyRecordsController::class)->middleware('auth');
+Route::resource('/user_types', UserTypeController::class)->middleware('auth');
+Route::resource('/occurrences', OccurrencyController::class)->middleware('auth');
