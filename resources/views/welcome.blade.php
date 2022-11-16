@@ -450,7 +450,7 @@
         <hr>
 
         <div>
-            <a href="">
+            <a href={{ route('create_user.store') }}>
                 <p class="text-center">Não possui uma conta? Cadastre-se!</p>
             </a>
         </div>

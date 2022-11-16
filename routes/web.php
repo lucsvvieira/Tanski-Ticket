@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CreateUserController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OccurrencyAttachment;
@@ -27,8 +28,10 @@ use App\Http\Controllers\UserTypeController;
 |
 */
 Route::get('/', [LoginController::class, 'login'])->name('login.page');
+Route::get('/create_user', [CreateUserController::class, 'create'])->name('create_user.store');
+Route::post('/create_user', [CreateUserController::class, 'store']);
 Route::post('/auth', [LoginController::class, 'auth'])->name('auth.login');
-Route::resource('/clients', ClientController::class);
+
 
 // GET|HEAD        clients ..................................................... clients.index › ClientController@index
 // POST            clients ..................................................... clients.store › ClientController@store
@@ -39,7 +42,7 @@ Route::resource('/clients', ClientController::class);
 // GET|HEAD        clients/{client}/edit ......................................... clients.edit › ClientController@edit
 // GET|HEAD        sanctum/csrf-cookie .............. sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
 // GET|HEAD        test .......................................................................... TestController@index
-
+Route::resource('/clients', ClientController::class)->middleware('auth');
 Route::resource('/users', UserController::class)->middleware('auth');
 Route::resource('/priorities', PriorityController::class)->middleware('auth');
 Route::resource('/occurrency_status', OccurrencyStatusController::class)->middleware('auth');
